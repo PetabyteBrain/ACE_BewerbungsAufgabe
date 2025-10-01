@@ -1,0 +1,14 @@
+networks:
+  catechis-network:
+    external: true
+
+services:
+  flask-api:
+    build: .
+    container_name: flask-api
+    ports:
+      - "2000:5000"  # optional, only if you want host access
+    restart: always
+    networks:
+      - catechis-network
+
